@@ -50,10 +50,10 @@ nav a:hover {
 /* Box styling */
 .box-container {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: 10px;
   margin-top: 30px;
-  max-width: 800px;
+  max-width: 1000px;
 }
 
 .box {
@@ -70,3 +70,209 @@ nav a:hover {
   transform: scale(1.05);
   background: #f0f0f0;
 }
+
+
+/* Popup background */
+.popup-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.65);
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+/* Popup window */
+.popup-box {
+  background: white;
+  color: #222;
+  width: 90%;
+  max-width: 420px;
+  padding: 40px 30px;
+  border-radius: 18px;
+  text-align: center;
+  position: relative;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.35);
+}
+
+/* Close button */
+.close-btn {
+  position: absolute;
+  top: 12px;
+  right: 16px;
+  background: none;
+  border: none;
+  font-size: 2rem;
+  cursor: pointer;
+  color: #555;
+}
+
+.close-btn:hover {
+  color: black;
+}
+
+/* Begin button */
+.begin-btn,
+.reveal-btn,
+.next-btn {
+  border: none;
+  padding: 14px 30px;
+  font-size: 1rem;
+  border-radius: 999px;
+  cursor: pointer;
+  margin: 10px;
+  transition: 0.25s;
+}
+
+.begin-btn {
+  background: #007aff;
+  color: white;
+}
+
+.begin-btn:hover {
+  background: #005ecb;
+  transform: scale(1.05);
+}
+
+/* Flashcard area starts hidden */
+.flashcard-area {
+  display: none;
+}
+
+/* Flashcard container */
+.flashcard {
+  width: 100%;
+  height: 260px;
+  perspective: 1000px;
+  margin-bottom: 20px;
+}
+
+/* Inner flipping part */
+.flashcard-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+}
+
+/* Flip effect */
+.flashcard.flipped .flashcard-inner {
+  transform: rotateY(180deg);
+}
+
+/* Front and back */
+.flashcard-front,
+.flashcard-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 16px;
+  backface-visibility: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: #f4f4f4;
+  padding: 25px;
+}
+
+/* Front text */
+.flashcard-front h2 {
+  font-size: 3rem;
+}
+
+/* Back side */
+.flashcard-back {
+  transform: rotateY(180deg);
+  background: #222;
+  color: white;
+}
+
+.flashcard-back h2 {
+  font-size: 2rem;
+  margin-bottom: 15px;
+}
+
+.flashcard-back p {
+  font-size: 1.2rem;
+  max-width: 300px;
+}
+
+/* Reveal button */
+.reveal-btn {
+  background: #27ae60;
+  color: white;
+}
+
+.reveal-btn:hover {
+  background: #1f8f4f;
+  transform: scale(1.05);
+}
+
+/* Next button */
+.next-btn {
+  background: #333;
+  color: white;
+}
+
+.next-btn:hover {
+  background: #111;
+  transform: scale(1.05);
+}
+
+/* Mobile improvements */
+@media (max-width: 600px) {
+  .popup-box {
+    width: 92%;
+    padding: 35px 20px;
+  }
+
+  .flashcard {
+    width: 80vw;
+    height: 60vh;
+    margin: 20px auto;
+
+  }
+
+  .flashcard-front h2 {
+    font-size: 3rem;
+  }
+
+  .flashcard-back h2 {
+    font-size: 2.2rem;
+  }
+
+  .flashcard-back p {
+    font-size: 1.3rem;
+  }
+  .begin-btn,
+  .reveal-btn,
+  .next-btn {
+    font-size: 1.2rem;
+    padding: 16px 28px;
+  }
+}
+
+
+
+
+@media (max-width: 980px) {
+  .box-container {
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 15px;
+    margin: 20px;
+  }
+  .box{
+    font-size: 40px;
+  }
+  nav a{
+    font-size: 4rem;
+  }
+  nav{
+    margin-bottom: 150px;
+    margin-top: 30px;
+  }
+}
+

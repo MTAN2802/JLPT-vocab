@@ -124,6 +124,39 @@
 
     </div>
   </section>
+  
+  <!-- Popup Modal -->
+  <div id="popup" class="popup-overlay">
+    <div class="popup-box">
+      <button id="closePopup" class="close-btn">&times;</button>
+
+      <!-- Start screen -->
+      <div id="popupStart">
+        <h2 id="popupTitle"></h2>
+        <button id="beginBtn" class="begin-btn">Begin</button>
+      </div>
+
+      <!-- Flashcard screen -->
+      <div id="flashcardArea" class="flashcard-area">
+        <div id="flashcard" class="flashcard">
+          <div class="flashcard-inner">
+            <div class="flashcard-front">
+              <h2 id="cardOriginal"></h2>
+            </div>
+
+            <div class="flashcard-back">
+              <h2 id="cardFurigana"></h2>
+              <p id="cardEnglish"></p>
+            </div>
+          </div>
+        </div>
+
+        <button id="revealBtn" class="reveal-btn">Reveal</button>
+        <button id="nextCardBtn" class="next-btn">Next Card</button>
+      </div>
+    </div>
+  </div>
+
   <script src="vocab.js"></script>
 </body>
 </html>
